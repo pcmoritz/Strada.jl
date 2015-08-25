@@ -11,7 +11,9 @@
 #include "caffe/layer.hpp"
 #include "caffe/net.hpp"
 #include "caffe/proto/caffe.pb.h"
+#ifndef CAFFE_HEADLESS
 #include "caffe/util/hdf5.hpp"
+#endif
 #include "caffe/util/insert_splits.hpp"
 #include "caffe/util/math_functions.hpp"
 #include "caffe/util/upgrade_proto.hpp"
@@ -762,12 +764,16 @@ void Net<Dtype>::CopyTrainedLayersFrom(const NetParameter& param) {
 
 template <typename Dtype>
 void Net<Dtype>::CopyTrainedLayersFrom(const string trained_filename) {
+  #ifndef CAFFE_HEADLESS
   if (trained_filename.size() >= 3 &&
       trained_filename.compare(trained_filename.size() - 3, 3, ".h5") == 0) {
     CopyTrainedLayersFromHDF5(trained_filename);
   } else {
     CopyTrainedLayersFromBinaryProto(trained_filename);
   }
+  #else
+    CopyTrainedLayersFromBinaryProto(trained_filename);
+  #endif
 }
 
 template <typename Dtype>
@@ -778,6 +784,7 @@ void Net<Dtype>::CopyTrainedLayersFromBinaryProto(
   CopyTrainedLayersFrom(param);
 }
 
+#ifndef CAFFE_HEADLESS
 template <typename Dtype>
 void Net<Dtype>::CopyTrainedLayersFromHDF5(const string trained_filename) {
   hid_t file_hid = H5Fopen(trained_filename.c_str(), H5F_ACC_RDONLY,
@@ -827,6 +834,7 @@ void Net<Dtype>::CopyTrainedLayersFromHDF5(const string trained_filename) {
   H5Gclose(data_hid);
   H5Fclose(file_hid);
 }
+#endif
 
 template <typename Dtype>
 void Net<Dtype>::ToProto(NetParameter* param, bool write_diff) const {
@@ -849,6 +857,7 @@ void Net<Dtype>::ToProto(NetParameter* param, bool write_diff) const {
   }
 }
 
+#ifndef CAFFE_HEADLESS
 template <typename Dtype>
 void Net<Dtype>::ToHDF5(const string& filename, bool write_diff) const {
   hid_t file_hid = H5Fcreate(filename.c_str(), H5F_ACC_TRUNC, H5P_DEFAULT,
@@ -905,6 +914,8 @@ void Net<Dtype>::ToHDF5(const string& filename, bool write_diff) const {
   }
   H5Fclose(file_hid);
 }
+
+#endif
 
 template <typename Dtype>
 void Net<Dtype>::Update() {

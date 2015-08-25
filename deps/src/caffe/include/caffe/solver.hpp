@@ -48,12 +48,16 @@ class Solver {
   void Snapshot();
   string SnapshotFilename(const string extension);
   string SnapshotToBinaryProto();
+  #ifndef CAFFE_HEADLESS
   string SnapshotToHDF5();
+  #endif
   // The test routine
   void TestAll();
   void Test(const int test_net_id = 0);
   virtual void SnapshotSolverState(const string& model_filename) = 0;
+  #ifndef CAFFE_HEADLESS
   virtual void RestoreSolverStateFromHDF5(const string& state_file) = 0;
+  #endif
   virtual void RestoreSolverStateFromBinaryProto(const string& state_file) = 0;
   void DisplayOutputBlobs(const int net_id);
 
@@ -91,8 +95,10 @@ class SGDSolver : public Solver<Dtype> {
   virtual void ClipGradients();
   virtual void SnapshotSolverState(const string& model_filename);
   virtual void SnapshotSolverStateToBinaryProto(const string& model_filename);
+  #ifndef CAFFE_HEADLESS
   virtual void SnapshotSolverStateToHDF5(const string& model_filename);
   virtual void RestoreSolverStateFromHDF5(const string& state_file);
+  #endif
   virtual void RestoreSolverStateFromBinaryProto(const string& state_file);
   // history maintains the historical momentum data.
   // update maintains update related data and is not needed in snapshots.

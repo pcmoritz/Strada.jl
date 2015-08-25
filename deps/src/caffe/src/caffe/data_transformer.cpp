@@ -124,11 +124,12 @@ void DataTransformer<Dtype>::Transform(const Datum& datum,
   }
 }
 
-#ifndef CAFFE_HEADLESS
-
 template<typename Dtype>
 void DataTransformer<Dtype>::Transform(const Datum& datum,
                                        Blob<Dtype>* transformed_blob) {
+  
+  #ifndef CAFFE_HEADLESS
+
   // If datum is encoded, decoded and transform the cv::image.
   if (datum.encoded()) {
     CHECK(!(param_.force_color() && param_.force_gray()))
@@ -147,6 +148,8 @@ void DataTransformer<Dtype>::Transform(const Datum& datum,
       LOG(ERROR) << "force_color and force_gray only for encoded datum";
     }
   }
+
+  #endif
 
   const int crop_size = param_.crop_size();
   const int datum_channels = datum.channels();
@@ -175,8 +178,6 @@ void DataTransformer<Dtype>::Transform(const Datum& datum,
   Dtype* transformed_data = transformed_blob->mutable_cpu_data();
   Transform(datum, transformed_data);
 }
-
-#endif
 
 template<typename Dtype>
 void DataTransformer<Dtype>::Transform(const vector<Datum> & datum_vector,
@@ -437,10 +438,11 @@ void DataTransformer<Dtype>::Transform(Blob<Dtype>* input_blob,
   }
 }
 
-#ifndef CAFFE_HEADLESS
-
 template<typename Dtype>
 vector<int> DataTransformer<Dtype>::InferBlobShape(const Datum& datum) {
+
+  #ifndef CAFFE_HEADLESS
+
   if (datum.encoded()) {
     CHECK(!(param_.force_color() && param_.force_gray()))
         << "cannot set both force_color and force_gray";
@@ -454,6 +456,8 @@ vector<int> DataTransformer<Dtype>::InferBlobShape(const Datum& datum) {
     // InferBlobShape using the cv::image.
     return InferBlobShape(cv_img);
   }
+
+  #endif
 
   const int crop_size = param_.crop_size();
   const int datum_channels = datum.channels();
@@ -471,8 +475,6 @@ vector<int> DataTransformer<Dtype>::InferBlobShape(const Datum& datum) {
   shape[3] = (crop_size)? crop_size: datum_width;
   return shape;
 }
-
-#endif
 
 template<typename Dtype>
 vector<int> DataTransformer<Dtype>::InferBlobShape(

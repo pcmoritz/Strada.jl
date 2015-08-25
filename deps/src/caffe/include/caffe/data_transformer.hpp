@@ -50,6 +50,8 @@ class DataTransformer {
   void Transform(const vector<Datum> & datum_vector,
                 Blob<Dtype>* transformed_blob);
 
+  #ifndef CAFFE_HEADLESS
+
   /**
    * @brief Applies the transformation defined in the data layer's
    * transform_param block to a vector of Mat.
@@ -75,6 +77,8 @@ class DataTransformer {
    */
   void Transform(const cv::Mat& cv_img, Blob<Dtype>* transformed_blob);
 
+  #endif
+
   /**
    * @brief Applies the same transformation defined in the data layer's
    * transform_param block to all the num images in a input_blob.
@@ -96,6 +100,7 @@ class DataTransformer {
    *    Datum containing the data to be transformed.
    */
   vector<int> InferBlobShape(const Datum& datum);
+
   /**
    * @brief Infers the shape of transformed_blob will have when
    *    the transformation is applied to the data.
@@ -105,6 +110,9 @@ class DataTransformer {
    *    A vector of Datum containing the data to be transformed.
    */
   vector<int> InferBlobShape(const vector<Datum> & datum_vector);
+
+  #ifndef CAFFE_HEADLESS
+
   /**
    * @brief Infers the shape of transformed_blob will have when
    *    the transformation is applied to the data.
@@ -122,6 +130,8 @@ class DataTransformer {
    *    cv::Mat containing the data to be transformed.
    */
   vector<int> InferBlobShape(const cv::Mat& cv_img);
+
+  #endif
 
  protected:
    /**

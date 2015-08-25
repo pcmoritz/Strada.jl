@@ -4,13 +4,17 @@
 #include <string>
 #include <vector>
 
+#ifndef CAFFE_HEADLESS
 #include "hdf5.h"
 #include "hdf5_hl.h"
+#endif
 
 #include "caffe/net.hpp"
 #include "caffe/proto/caffe.pb.h"
 #include "caffe/solver.hpp"
+#ifndef CAFFE_HEADLESS
 #include "caffe/util/hdf5.hpp"
+#endif
 #include "caffe/util/io.hpp"
 #include "caffe/util/math_functions.hpp"
 #include "caffe/util/upgrade_proto.hpp"
@@ -340,9 +344,11 @@ void Solver<Dtype>::Snapshot() {
     case caffe::SolverParameter_SnapshotFormat_BINARYPROTO:
       model_filename = SnapshotToBinaryProto();
       break;
+    #ifndef CAFFE_HEADLESS
     case caffe::SolverParameter_SnapshotFormat_HDF5:
       model_filename = SnapshotToHDF5();
       break;
+    #endif
     default:
       LOG(FATAL) << "Unsupported snapshot format.";
   }
@@ -369,6 +375,7 @@ string Solver<Dtype>::SnapshotToBinaryProto() {
   return model_filename;
 }
 
+#ifndef CAFFE_HEADLESS
 template <typename Dtype>
 string Solver<Dtype>::SnapshotToHDF5() {
   string model_filename = SnapshotFilename(".caffemodel.h5");
@@ -376,16 +383,21 @@ string Solver<Dtype>::SnapshotToHDF5() {
   net_->ToHDF5(model_filename, param_.snapshot_diff());
   return model_filename;
 }
+#endif
 
 template <typename Dtype>
 void Solver<Dtype>::Restore(const char* state_file) {
   string state_filename(state_file);
+  #ifndef CAFFE_HEADLESS
   if (state_filename.size() >= 3 &&
       state_filename.compare(state_filename.size() - 3, 3, ".h5") == 0) {
     RestoreSolverStateFromHDF5(state_filename);
   } else {
     RestoreSolverStateFromBinaryProto(state_filename);
   }
+  #else
+    RestoreSolverStateFromBinaryProto(state_filename);
+  #endif
 }
 
 // Return the current learning rate. The currently implemented learning rate
@@ -623,9 +635,11 @@ void SGDSolver<Dtype>::SnapshotSolverState(const string& model_filename) {
     case caffe::SolverParameter_SnapshotFormat_BINARYPROTO:
       SnapshotSolverStateToBinaryProto(model_filename);
       break;
+    #ifndef CAFFE_HEADLESS
     case caffe::SolverParameter_SnapshotFormat_HDF5:
       SnapshotSolverStateToHDF5(model_filename);
       break;
+    #endif
     default:
       LOG(FATAL) << "Unsupported snapshot format.";
   }
@@ -650,6 +664,7 @@ void SGDSolver<Dtype>::SnapshotSolverStateToBinaryProto(
   WriteProtoToBinaryFile(state, snapshot_filename.c_str());
 }
 
+#ifndef CAFFE_HEADLESS
 template <typename Dtype>
 void SGDSolver<Dtype>::SnapshotSolverStateToHDF5(
     const string& model_filename) {
@@ -675,6 +690,7 @@ void SGDSolver<Dtype>::SnapshotSolverStateToHDF5(
   H5Gclose(history_hid);
   H5Fclose(file_hid);
 }
+#endif
 
 template <typename Dtype>
 void SGDSolver<Dtype>::RestoreSolverStateFromBinaryProto(
@@ -696,6 +712,7 @@ void SGDSolver<Dtype>::RestoreSolverStateFromBinaryProto(
   }
 }
 
+#ifndef CAFFE_HEADLESS
 template <typename Dtype>
 void SGDSolver<Dtype>::RestoreSolverStateFromHDF5(const string& state_file) {
   hid_t file_hid = H5Fopen(state_file.c_str(), H5F_ACC_RDONLY, H5P_DEFAULT);
@@ -720,6 +737,7 @@ void SGDSolver<Dtype>::RestoreSolverStateFromHDF5(const string& state_file) {
   H5Gclose(history_hid);
   H5Fclose(file_hid);
 }
+#endif
 
 template <typename Dtype>
 void NesterovSolver<Dtype>::ComputeUpdateValue(int param_id, Dtype rate) {

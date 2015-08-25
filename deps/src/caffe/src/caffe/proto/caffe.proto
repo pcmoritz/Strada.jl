@@ -384,6 +384,7 @@ message LayerParameter {
   optional ThresholdParameter threshold_param = 128;
   optional WindowDataParameter window_data_param = 129;
   optional WordvecParameter wordvec_param = 202;
+  optional PointerDataParameter pointer_data_param = 139;
 
   optional RuntimeParameter rp = 200;
 }
@@ -734,6 +735,10 @@ message MemoryDataParameter {
   optional uint32 channels = 2;
   optional uint32 height = 3;
   optional uint32 width = 4;
+}
+
+message PointerDataParameter {
+  optional BlobShape shape = 1;
 }
 
 message MVNParameter {

@@ -181,6 +181,7 @@ class Caffe {
   DISABLE_COPY_AND_ASSIGN(Caffe);
 };
 
+#ifndef CAFFE_HEADLESS
 #ifdef NDEBUG
 #define ASSERT(condition, stream) if (!(condition)) { \
   throw std::runtime_error(Formatter() << __FILE__ << "(@" \
@@ -213,6 +214,7 @@ class Formatter {
     Formatter(const Formatter &);
     Formatter & operator = (Formatter &);
 };
+#endif
 
 }  // namespace caffe
 
