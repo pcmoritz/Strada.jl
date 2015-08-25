@@ -1,4 +1,6 @@
+#ifndef CAFFE_HEADLESS
 #include <opencv2/core/core.hpp>
+#endif
 
 #include <vector>
 
@@ -53,6 +55,8 @@ void MemoryDataLayer<Dtype>::AddDatumVector(const vector<Datum>& datum_vector) {
   has_new_data_ = true;
 }
 
+#ifndef CAFFE_HEADLESS
+
 template <typename Dtype>
 void MemoryDataLayer<Dtype>::AddMatVector(const vector<cv::Mat>& mat_vector,
     const vector<int>& labels) {
@@ -76,6 +80,8 @@ void MemoryDataLayer<Dtype>::AddMatVector(const vector<cv::Mat>& mat_vector,
   Reset(top_data, top_label, num);
   has_new_data_ = true;
 }
+
+#endif
 
 template <typename Dtype>
 void MemoryDataLayer<Dtype>::Reset(Dtype* data, Dtype* labels, int n) {

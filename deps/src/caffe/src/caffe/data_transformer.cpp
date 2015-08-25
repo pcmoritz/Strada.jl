@@ -1,4 +1,6 @@
+#ifndef CAFFE_HEADLESS
 #include <opencv2/core/core.hpp>
+#endif
 
 #include <string>
 #include <vector>
@@ -122,6 +124,8 @@ void DataTransformer<Dtype>::Transform(const Datum& datum,
   }
 }
 
+#ifndef CAFFE_HEADLESS
+
 template<typename Dtype>
 void DataTransformer<Dtype>::Transform(const Datum& datum,
                                        Blob<Dtype>* transformed_blob) {
@@ -172,6 +176,8 @@ void DataTransformer<Dtype>::Transform(const Datum& datum,
   Transform(datum, transformed_data);
 }
 
+#endif
+
 template<typename Dtype>
 void DataTransformer<Dtype>::Transform(const vector<Datum> & datum_vector,
                                        Blob<Dtype>* transformed_blob) {
@@ -191,6 +197,8 @@ void DataTransformer<Dtype>::Transform(const vector<Datum> & datum_vector,
     Transform(datum_vector[item_id], &uni_blob);
   }
 }
+
+#ifndef CAFFE_HEADLESS
 
 template<typename Dtype>
 void DataTransformer<Dtype>::Transform(const vector<cv::Mat> & mat_vector,
@@ -314,6 +322,8 @@ void DataTransformer<Dtype>::Transform(const cv::Mat& cv_img,
   }
 }
 
+#endif
+
 template<typename Dtype>
 void DataTransformer<Dtype>::Transform(Blob<Dtype>* input_blob,
                                        Blob<Dtype>* transformed_blob) {
@@ -427,6 +437,8 @@ void DataTransformer<Dtype>::Transform(Blob<Dtype>* input_blob,
   }
 }
 
+#ifndef CAFFE_HEADLESS
+
 template<typename Dtype>
 vector<int> DataTransformer<Dtype>::InferBlobShape(const Datum& datum) {
   if (datum.encoded()) {
@@ -460,6 +472,8 @@ vector<int> DataTransformer<Dtype>::InferBlobShape(const Datum& datum) {
   return shape;
 }
 
+#endif
+
 template<typename Dtype>
 vector<int> DataTransformer<Dtype>::InferBlobShape(
     const vector<Datum> & datum_vector) {
@@ -471,6 +485,8 @@ vector<int> DataTransformer<Dtype>::InferBlobShape(
   shape[0] = num;
   return shape;
 }
+
+#ifndef CAFFE_HEADLESS
 
 template<typename Dtype>
 vector<int> DataTransformer<Dtype>::InferBlobShape(const cv::Mat& cv_img) {
@@ -502,6 +518,8 @@ vector<int> DataTransformer<Dtype>::InferBlobShape(
   shape[0] = num;
   return shape;
 }
+
+#endif
 
 template <typename Dtype>
 void DataTransformer<Dtype>::InitRand() {

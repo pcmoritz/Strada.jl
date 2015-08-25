@@ -5,6 +5,10 @@
 #include <gflags/gflags.h>
 #include <glog/logging.h>
 
+#ifdef CAFFE_HEADLESS
+#include "error.hpp"
+#endif
+
 #include <climits>
 #include <cmath>
 #include <fstream>  // NOLINT(readability/streams)

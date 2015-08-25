@@ -2,10 +2,14 @@
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/io/zero_copy_stream_impl.h>
 #include <google/protobuf/text_format.h>
+
+#ifndef CAFFE_HEADLESS
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/highgui/highgui_c.h>
 #include <opencv2/imgproc/imgproc.hpp>
+#endif
+
 #include <stdint.h>
 
 #include <algorithm>
@@ -67,6 +71,8 @@ void WriteProtoToBinaryFile(const Message& proto, const char* filename) {
   CHECK(proto.SerializeToOstream(&output));
 }
 
+#ifndef CAFFE_HEADLESS
+
 cv::Mat ReadImageToCVMat(const string& filename,
     const int height, const int width, const bool is_color) {
   cv::Mat cv_img;
@@ -98,6 +104,9 @@ cv::Mat ReadImageToCVMat(const string& filename,
 cv::Mat ReadImageToCVMat(const string& filename) {
   return ReadImageToCVMat(filename, 0, 0, true);
 }
+
+#endif
+
 // Do the file extension and encoding match?
 static bool matchExt(const std::string & fn,
                      std::string en) {
@@ -111,6 +120,9 @@ static bool matchExt(const std::string & fn,
     return true;
   return false;
 }
+
+#ifndef CAFFE_HEADLESS
+
 bool ReadImageToDatum(const string& filename, const int label,
     const int height, const int width, const bool is_color,
     const std::string & encoding, Datum* datum) {
@@ -136,6 +148,8 @@ bool ReadImageToDatum(const string& filename, const int label,
   }
 }
 
+#endif
+
 bool ReadFileToDatum(const string& filename, const int label,
     Datum* datum) {
   std::streampos size;
@@ -155,6 +169,8 @@ bool ReadFileToDatum(const string& filename, const int label,
     return false;
   }
 }
+
+#ifndef CAFFE_HEADLESS
 
 cv::Mat DecodeDatumToCVMatNative(const Datum& datum) {
   cv::Mat cv_img;
@@ -228,5 +244,6 @@ void CVMatToDatum(const cv::Mat& cv_img, Datum* datum) {
   datum->set_data(buffer);
 }
 
+#endif
 
 }  // namespace caffe
