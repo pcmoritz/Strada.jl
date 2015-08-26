@@ -1,5 +1,7 @@
 # Strada
 
+[![Documentation Status](https://readthedocs.org/projects/stradajl/badge/?version=latest)](https://readthedocs.org/projects/stradajl/?badge=latest)
+
 Strada is a Deep Learning library for Julia, based on the popular [Caffe](http://caffe.berkeleyvision.org/) framework developed by BVLC and the Berkeley computer vision community. It supports convolutional and recurrent neural netwok training, both on the CPU and GPU. Some highlights:
 
 - **Simplicity** both for advanced users and novices. It is easy to install and also a good platform for teaching.
