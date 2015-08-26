@@ -1,0 +1,16 @@
+site_name: Strada.jl
+
+pages:
+- [index.md, Index]
+- [tutorial.md, Tutorial]
+- [network.md, Network]
+- [api/layers.md, Layers]
+- [training.md, Training]
+- [examples.md, Examples]
+- [api/Strada.md, API]
+
+extra_javascript: 
+- http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+markdown_extensions:
+- mdx_math
