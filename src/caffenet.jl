@@ -41,11 +41,13 @@ function Net(name::ASCIIString, layers::Vector{Layer}; use_gpu::Bool=false, log_
 	return CaffeNet(name, param, layers, state, get_blobs(state), layer_blobs, data_layer_assoc, false)
 end
 
+@doc "Activate CPU mode." ->
 function set_mode_cpu(net::CaffeNet)
 	ccall((:set_mode_cpu, "libjlcaffe.so"), Void, ())
 	net.on_gpu = false
 end
 
+@doc "Activate CPU mode." ->
 function set_mode_gpu(net::CaffeNet)
 	ccall((:set_mode_gpu, "libjlcaffe.so"), Void, ())
 	net.on_gpu = true

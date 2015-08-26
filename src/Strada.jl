@@ -26,6 +26,8 @@ export
 	filler,
 	CaffeNet,
 	Net,
+	set_mode_cpu,
+	set_mode_gpu,
 	forward,
 	backward,
 	reset,
@@ -88,15 +90,5 @@ Libdl.dlopen(Base.libblas_name, Libdl.RTLD_LAZY | Libdl.RTLD_DEEPBIND | Libdl.RT
 # Initialize caffe
 ccall((:init_jlcaffe, "libjlcaffe.so"), Void, ())
 ccall((:set_global_error_callback, "libjlcaffe.so"), Void, (Ptr{Void},), error_callback_c)
-
-@doc "Activate CPU mode." ->
-function set_mode_cpu()
-	ccall((:set_mode_cpu, "libjlcaffe.so"), Void, ())
-end
-
-@doc "Activate GPU mode." ->
-function set_mode_gpu()
-	ccall((:set_mode_gpu, "libjlcaffe.so"), Void, ())
-end
 
 end # module

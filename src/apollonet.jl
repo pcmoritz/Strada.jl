@@ -35,3 +35,13 @@ end
 function backward(net::ApolloNet)
 	ccall((:apollo_backward, "libjlcaffe.so"), Void, (Ptr{Void},), net.state)
 end
+
+@doc "Activate CPU mode." ->
+function set_mode_cpu(net::ApolloNet)
+	ccall((:set_mode_cpu, "libjlcaffe.so"), Void, ())
+end
+
+@doc "Activate GPU mode." ->
+function set_mode_gpu(net::ApolloNet)
+	ccall((:set_mode_gpu, "libjlcaffe.so"), Void, ())
+end

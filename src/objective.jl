@@ -18,7 +18,8 @@ function make_objective(net::CaffeNet, F::DataType; lambda::Float64=5e-4, loss_l
 		end
 		if net.on_gpu
 		   net.blobs = get_blobs(net.state)
-		   net.layers = get_layer_blobs(net.state)
+		   (layer_names, layer_blobs) = get_layer_info(net.state)
+		   net.layers = layer_blobs
 		end
 		if length(grad) > 0 # calculate gradient
 			copy!(grad, net.layers.diff)
@@ -52,7 +53,8 @@ function make_predictor(net::CaffeNet, F::DataType, output_layer_name::String; l
 		forward(net)
 		if net.on_gpu
 		   net.blobs = get_blobs(net.state)
-		   net.layers = get_layer_blobs(net.state)
+		   (layer_names, layer_blobs) = get_layer_info(net.state)
+		   net.layers = layer_blobs
 		end
 		pred = net.blobs.data[output_layer_name][1]
 		if length(result) > 0
