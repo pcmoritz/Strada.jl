@@ -5,7 +5,9 @@
 #include <utility>
 #include <vector>
 
+#ifndef CAFFE_HEADLESS
 #include "hdf5.h"
+#endif
 
 #include "caffe/common.hpp"
 #include "caffe/layer.hpp"
