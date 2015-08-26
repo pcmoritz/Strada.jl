@@ -9,7 +9,7 @@ Activation layers compute element-wise function, taking one bottom blob as input
 
 Both input and output are of shape `n * c * h * w`.
 
-[Strada/src/layers.jl:182](file:///home/pcmoritz/.julia/v0.3/Strada/src/layers.jl)
+[Strada/src/layers.jl:182](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L182)
 
 
 
@@ -21,7 +21,7 @@ The Concat layer is a utility layer that concatenates its multiple input blobs t
 
 * `n_1 * (c_1 + c_2 + ... + c_K) * h * w` if `axis = 1` in which case all `n_i` should be the same.
 
-[Strada/src/layers.jl:284](file:///home/pcmoritz/.julia/v0.3/Strada/src/layers.jl)
+[Strada/src/layers.jl:284](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L284)
 
 
 
@@ -42,7 +42,7 @@ The Convolution layer convolves the input image with a set of learnable filters,
 The input is of shape `n * c_i * h_i * w_i` and the output is of shape `n * c_o * h_o * w_o`, where `h_o = (h_i + 2 * pad_h - kernel_h) / stride_h + 1` and `w_o` likewise.
 
 
-[Strada/src/layers.jl:96](file:///home/pcmoritz/.julia/v0.3/Strada/src/layers.jl)
+[Strada/src/layers.jl:96](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L96)
 
 
 
@@ -50,7 +50,7 @@ The input is of shape `n * c_i * h_i * w_i` and the output is of shape `n * c_o 
 
 The DataLayer makes it easy to propagate data through the network while doing computation. The data is being stored in Google Protocol Buffers and transferred to Caffe in this way. Its only keyword argument is `data` which is an array that will be presented to the next layer through the top blob. It is meant to be used only with `ApolloNet`s.
 
-[Strada/src/layers.jl:351](file:///home/pcmoritz/.julia/v0.3/Strada/src/layers.jl)
+[Strada/src/layers.jl:351](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L351)
 
 
 
@@ -58,14 +58,14 @@ The DataLayer makes it easy to propagate data through the network while doing co
 
 The dropout layer is a regularizer that randomly sets input values to zero.
 
-[Strada/src/layers.jl:217](file:///home/pcmoritz/.julia/v0.3/Strada/src/layers.jl)
+[Strada/src/layers.jl:217](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L217)
 
 
 
 ## EuclideanLoss
 
 The Euclidean loss layer computes the sum of squares of differences of its two inputs
-[Strada/src/layers.jl:332](file:///home/pcmoritz/.julia/v0.3/Strada/src/layers.jl)
+[Strada/src/layers.jl:332](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L332)
 
 
 
@@ -81,7 +81,7 @@ The local response normalization layer performs a kind of â€œlateral inhibitionâ
 
 * `norm_region`: Mode of the local contrast normalization. Can be `ACROSS_CHANNELS` or `WITHIN_CHANNEL`. 
 
-[Strada/src/layers.jl:202](file:///home/pcmoritz/.julia/v0.3/Strada/src/layers.jl)
+[Strada/src/layers.jl:202](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L202)
 
 
 
@@ -94,7 +94,7 @@ The InnerProduct layer (also usually referred to as the fully connected layer) t
 The input is of shape `n * c_i * h_i * w_i` and the output of shape `n * c_o * 1 * 1`.
 
 
-[Strada/src/layers.jl:125](file:///home/pcmoritz/.julia/v0.3/Strada/src/layers.jl)
+[Strada/src/layers.jl:125](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L125)
 
 
 
@@ -102,7 +102,7 @@ The input is of shape `n * c_i * h_i * w_i` and the output of shape `n * c_o * 1
 
 The LstmLayer is an LSTM unit. It takes two blobs as input, the current LSTM input and the previous memory cell content. It outputs the new hidden state and the updated memory cell.
 
-[Strada/src/layers.jl:240](file:///home/pcmoritz/.julia/v0.3/Strada/src/layers.jl)
+[Strada/src/layers.jl:240](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L240)
 
 
 
@@ -110,7 +110,7 @@ The LstmLayer is an LSTM unit. It takes two blobs as input, the current LSTM inp
 
 The LstmLayer is an LSTM unit. It takes two blobs as input, the current LSTM input and the previous memory cell content. It outputs the new hidden state and the updated memory cell.
 
-[Strada/src/layers.jl:240](file:///home/pcmoritz/.julia/v0.3/Strada/src/layers.jl)
+[Strada/src/layers.jl:240](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L240)
 
 
 
@@ -118,7 +118,7 @@ The LstmLayer is an LSTM unit. It takes two blobs as input, the current LSTM inp
 
 The MemoryLayer presents data to Caffe through a pointer (it is implemented as a new Caffe Layer called PointerData), which can be set using `set_data!` method of `CaffeNet`. It is the preferred way to fill `CaffeNet` with data. As each MemoryLayer provides exactly one top blob, you will typically have multiple of these (in the supervised setting, one for labels and one for images for example). In `set_data!`, you can specify with an integer index which of the layers will be filled with the data provided.
 
-[Strada/src/layers.jl:339](file:///home/pcmoritz/.julia/v0.3/Strada/src/layers.jl)
+[Strada/src/layers.jl:339](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L339)
 
 
 
@@ -134,7 +134,7 @@ The PoolLayer partitions the input image into a set of non-overlapping rectangle
 
 The input is of shape `n * c * h_i * w_i` and the output of shape `n * c * h_o * w_o` where `h_o` and `w_o` are computed in the same way as for the convolution.
 
-[Strada/src/layers.jl:151](file:///home/pcmoritz/.julia/v0.3/Strada/src/layers.jl)
+[Strada/src/layers.jl:151](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L151)
 
 
 
@@ -142,7 +142,7 @@ The input is of shape `n * c * h_i * w_i` and the output of shape `n * c * h_o *
 
 Computes the softmax of the input. The parameter `axis` specifies which axis the softmax is computed over.
 
-[Strada/src/layers.jl:316](file:///home/pcmoritz/.julia/v0.3/Strada/src/layers.jl)
+[Strada/src/layers.jl:316](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L316)
 
 
 
@@ -154,7 +154,7 @@ The softmax loss layer computes the multinomial logistic loss of the softmax of 
 
 This layer expects two bottom blobs, the actual data of size `n * c * h * w` and a label of size `n * 1 * 1 * 1`.
 
-[Strada/src/layers.jl:299](file:///home/pcmoritz/.julia/v0.3/Strada/src/layers.jl)
+[Strada/src/layers.jl:299](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L299)
 
 
 
@@ -162,5 +162,5 @@ This layer expects two bottom blobs, the actual data of size `n * c * h * w` and
 
 The WordvecLayer turns positive integers (indexes) between 0 and `vocab_size - 1` into dense vectors of fixed size `dimension`. The input is of size `n` where `n` is the batchsize and the output is of size `n * dimension`.
 
-[Strada/src/layers.jl:256](file:///home/pcmoritz/.julia/v0.3/Strada/src/layers.jl)
+[Strada/src/layers.jl:256](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L256)
 

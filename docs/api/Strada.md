@@ -14,7 +14,7 @@ Both input and output are of shape `n * c * h * w`.
 
 
 *source:*
-[Strada/src/layers.jl:182](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/layers.jl#L182)
+[Strada/src/layers.jl:182](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L182)
 
 ---
 
@@ -28,7 +28,7 @@ The Concat layer is a utility layer that concatenates its multiple input blobs t
 
 
 *source:*
-[Strada/src/layers.jl:284](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/layers.jl#L284)
+[Strada/src/layers.jl:284](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L284)
 
 ---
 
@@ -51,7 +51,7 @@ The input is of shape `n * c_i * h_i * w_i` and the output is of shape `n * c_o 
 
 
 *source:*
-[Strada/src/layers.jl:96](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/layers.jl#L96)
+[Strada/src/layers.jl:96](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L96)
 
 ---
 
@@ -61,7 +61,7 @@ The DataLayer makes it easy to propagate data through the network while doing co
 
 
 *source:*
-[Strada/src/layers.jl:351](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/layers.jl#L351)
+[Strada/src/layers.jl:351](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L351)
 
 ---
 
@@ -71,7 +71,7 @@ The dropout layer is a regularizer that randomly sets input values to zero.
 
 
 *source:*
-[Strada/src/layers.jl:217](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/layers.jl#L217)
+[Strada/src/layers.jl:217](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L217)
 
 ---
 
@@ -80,7 +80,7 @@ The dropout layer is a regularizer that randomly sets input values to zero.
 The Euclidean loss layer computes the sum of squares of differences of its two inputs
 
 *source:*
-[Strada/src/layers.jl:332](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/layers.jl#L332)
+[Strada/src/layers.jl:332](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L332)
 
 ---
 
@@ -98,7 +98,7 @@ The local response normalization layer performs a kind of â€œlateral inhibitionâ
 
 
 *source:*
-[Strada/src/layers.jl:202](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/layers.jl#L202)
+[Strada/src/layers.jl:202](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L202)
 
 ---
 
@@ -113,7 +113,7 @@ The input is of shape `n * c_i * h_i * w_i` and the output of shape `n * c_o * 1
 
 
 *source:*
-[Strada/src/layers.jl:125](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/layers.jl#L125)
+[Strada/src/layers.jl:125](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L125)
 
 ---
 
@@ -123,7 +123,7 @@ The LstmLayer is an LSTM unit. It takes two blobs as input, the current LSTM inp
 
 
 *source:*
-[Strada/src/layers.jl:240](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/layers.jl#L240)
+[Strada/src/layers.jl:240](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L240)
 
 ---
 
@@ -133,7 +133,7 @@ The LstmLayer is an LSTM unit. It takes two blobs as input, the current LSTM inp
 
 
 *source:*
-[Strada/src/layers.jl:240](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/layers.jl#L240)
+[Strada/src/layers.jl:240](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L240)
 
 ---
 
@@ -143,7 +143,7 @@ The MemoryLayer presents data to Caffe through a pointer (it is implemented as a
 
 
 *source:*
-[Strada/src/layers.jl:339](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/layers.jl#L339)
+[Strada/src/layers.jl:339](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L339)
 
 ---
 
@@ -152,7 +152,7 @@ The MemoryLayer presents data to Caffe through a pointer (it is implemented as a
 Create an empty ApolloNet. A log_level of 0 prints full caffe debug information, a log_level of 3 prints nothing.
 
 *source:*
-[Strada/src/apollonet.jl:11](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/apollonet.jl#L11)
+[Strada/src/apollonet.jl:11](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/apollonet.jl#L11)
 
 ---
 
@@ -161,7 +161,7 @@ Create an empty ApolloNet. A log_level of 0 prints full caffe debug information,
 Load a model from a caffe compatible .caffemodel file (for example from the caffe model zoo).
 
 *source:*
-[Strada/src/caffenet.jl:22](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/caffenet.jl#L22)
+[Strada/src/caffenet.jl:22](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/caffenet.jl#L22)
 
 ---
 
@@ -179,7 +179,7 @@ The input is of shape `n * c * h_i * w_i` and the output of shape `n * c * h_o *
 
 
 *source:*
-[Strada/src/layers.jl:151](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/layers.jl#L151)
+[Strada/src/layers.jl:151](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L151)
 
 ---
 
@@ -189,7 +189,7 @@ Computes the softmax of the input. The parameter `axis` specifies which axis the
 
 
 *source:*
-[Strada/src/layers.jl:316](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/layers.jl#L316)
+[Strada/src/layers.jl:316](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L316)
 
 ---
 
@@ -203,7 +203,7 @@ This layer expects two bottom blobs, the actual data of size `n * c * h * w` and
 
 
 *source:*
-[Strada/src/layers.jl:299](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/layers.jl#L299)
+[Strada/src/layers.jl:299](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L299)
 
 ---
 
@@ -213,7 +213,7 @@ The WordvecLayer turns positive integers (indexes) between 0 and `vocab_size - 1
 
 
 *source:*
-[Strada/src/layers.jl:256](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/layers.jl#L256)
+[Strada/src/layers.jl:256](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L256)
 
 ---
 
@@ -222,7 +222,7 @@ The WordvecLayer turns positive integers (indexes) between 0 and `vocab_size - 1
 Run a backward pass through the whole network.
 
 *source:*
-[Strada/src/apollonet.jl:34](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/apollonet.jl#L34)
+[Strada/src/apollonet.jl:34](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/apollonet.jl#L34)
 
 ---
 
@@ -231,7 +231,7 @@ Run a backward pass through the whole network.
 Run a backward pass through the whole network.
 
 *source:*
-[Strada/src/caffenet.jl:79](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/caffenet.jl#L79)
+[Strada/src/caffenet.jl:79](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/caffenet.jl#L79)
 
 ---
 
@@ -240,7 +240,7 @@ Run a backward pass through the whole network.
 Copy a flat parameter vector into a binary blob.
 
 *source:*
-[Strada/src/blobs.jl:160](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/blobs.jl#L160)
+[Strada/src/blobs.jl:160](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/blobs.jl#L160)
 
 ---
 
@@ -249,7 +249,7 @@ Copy a flat parameter vector into a binary blob.
 Copy a binary blob into a flat parameter vector.
 
 *source:*
-[Strada/src/blobs.jl:150](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/blobs.jl#L150)
+[Strada/src/blobs.jl:150](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/blobs.jl#L150)
 
 ---
 
@@ -258,7 +258,7 @@ Copy a binary blob into a flat parameter vector.
 Copy a binary blob into a flat parameter vector.
 
 *source:*
-[Strada/src/blobs.jl:30](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/blobs.jl#L30)
+[Strada/src/blobs.jl:30](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/blobs.jl#L30)
 
 ---
 
@@ -267,7 +267,7 @@ Copy a binary blob into a flat parameter vector.
 Copy a flat parameter vector into a binary blob.
 
 *source:*
-[Strada/src/blobs.jl:42](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/blobs.jl#L42)
+[Strada/src/blobs.jl:42](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/blobs.jl#L42)
 
 ---
 
@@ -288,7 +288,7 @@ The parameters are given by keyword arguments:
 
 
 *source:*
-[Strada/src/layers.jl:64](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/layers.jl#L64)
+[Strada/src/layers.jl:64](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/layers.jl#L64)
 
 ---
 
@@ -297,7 +297,7 @@ The parameters are given by keyword arguments:
 Run a forward pass of a single layer.
 
 *source:*
-[Strada/src/apollonet.jl:25](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/apollonet.jl#L25)
+[Strada/src/apollonet.jl:25](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/apollonet.jl#L25)
 
 ---
 
@@ -306,7 +306,7 @@ Run a forward pass of a single layer.
 Run a forward pass through the whole network.
 
 *source:*
-[Strada/src/caffenet.jl:74](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/caffenet.jl#L74)
+[Strada/src/caffenet.jl:74](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/caffenet.jl#L74)
 
 ---
 
@@ -315,7 +315,7 @@ Run a forward pass through the whole network.
 Batchsize of the MinibatchStream
 
 *source:*
-[Strada/src/stream.jl:70](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/stream.jl#L70)
+[Strada/src/stream.jl:70](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/stream.jl#L70)
 
 ---
 
@@ -324,7 +324,7 @@ Batchsize of the MinibatchStream
 Get a random minibatch from the MinibatchStream
 
 *source:*
-[Strada/src/stream.jl:75](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/stream.jl#L75)
+[Strada/src/stream.jl:75](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/stream.jl#L75)
 
 ---
 
@@ -333,7 +333,7 @@ Get a random minibatch from the MinibatchStream
 Check gradients using symmetric finite differences. See the tests for example how to run.
 
 *source:*
-[Strada/src/gradcheck.jl:11](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/gradcheck.jl#L11)
+[Strada/src/gradcheck.jl:11](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/gradcheck.jl#L11)
 
 ---
 
@@ -342,7 +342,7 @@ Check gradients using symmetric finite differences. See the tests for example ho
 The total number of variables in a binary blob.
 
 *source:*
-[Strada/src/blobs.jl:141](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/blobs.jl#L141)
+[Strada/src/blobs.jl:141](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/blobs.jl#L141)
 
 ---
 
@@ -351,7 +351,7 @@ The total number of variables in a binary blob.
 Number of parameters in the blob.
 
 *source:*
-[Strada/src/blobs.jl:19](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/blobs.jl#L19)
+[Strada/src/blobs.jl:19](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/blobs.jl#L19)
 
 ---
 
@@ -360,7 +360,7 @@ Number of parameters in the blob.
 Load a model from a caffe compatible .caffemodel file (for example from the caffe model zoo).
 
 *source:*
-[Strada/src/caffenet.jl:56](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/caffenet.jl#L56)
+[Strada/src/caffenet.jl:56](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/caffenet.jl#L56)
 
 ---
 
@@ -369,7 +369,7 @@ Load a model from a caffe compatible .caffemodel file (for example from the caff
 Construct a MinibatchStream from a tuple of data arrays with full batch size.
 
 *source:*
-[Strada/src/stream.jl:46](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/stream.jl#L46)
+[Strada/src/stream.jl:46](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/stream.jl#L46)
 
 ---
 
@@ -378,7 +378,7 @@ Construct a MinibatchStream from a tuple of data arrays with full batch size.
 Number of minibatches in the MinibatchStream
 
 *source:*
-[Strada/src/stream.jl:60](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/stream.jl#L60)
+[Strada/src/stream.jl:60](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/stream.jl#L60)
 
 ---
 
@@ -387,7 +387,7 @@ Number of minibatches in the MinibatchStream
 Load a dataset from the libsvm compatible svmlight file format into a sparse matrix.
 
 *source:*
-[Strada/src/svmlight.jl:3](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/svmlight.jl#L3)
+[Strada/src/svmlight.jl:3](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/svmlight.jl#L3)
 
 ---
 
@@ -396,7 +396,7 @@ Load a dataset from the libsvm compatible svmlight file format into a sparse mat
 Load a dataset from the libsvm compatible svmlight file format into a sparse matrix.
 
 *source:*
-[Strada/src/svmlight.jl:3](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/svmlight.jl#L3)
+[Strada/src/svmlight.jl:3](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/svmlight.jl#L3)
 
 ---
 
@@ -405,7 +405,7 @@ Load a dataset from the libsvm compatible svmlight file format into a sparse mat
 Clear the active layers and active parameters of the net so a new forward pass can be run.
 
 *source:*
-[Strada/src/apollonet.jl:19](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/apollonet.jl#L19)
+[Strada/src/apollonet.jl:19](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/apollonet.jl#L19)
 
 ---
 
@@ -414,7 +414,7 @@ Clear the active layers and active parameters of the net so a new forward pass c
 Activate CPU mode.
 
 *source:*
-[Strada/src/apollonet.jl:39](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/apollonet.jl#L39)
+[Strada/src/apollonet.jl:39](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/apollonet.jl#L39)
 
 ---
 
@@ -423,7 +423,7 @@ Activate CPU mode.
 Activate CPU mode.
 
 *source:*
-[Strada/src/caffenet.jl:44](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/caffenet.jl#L44)
+[Strada/src/caffenet.jl:44](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/caffenet.jl#L44)
 
 ---
 
@@ -432,7 +432,7 @@ Activate CPU mode.
 Activate GPU mode.
 
 *source:*
-[Strada/src/apollonet.jl:44](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/apollonet.jl#L44)
+[Strada/src/apollonet.jl:44](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/apollonet.jl#L44)
 
 ---
 
@@ -441,7 +441,7 @@ Activate GPU mode.
 Activate CPU mode.
 
 *source:*
-[Strada/src/caffenet.jl:50](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/caffenet.jl#L50)
+[Strada/src/caffenet.jl:50](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/caffenet.jl#L50)
 
 ---
 
@@ -450,7 +450,7 @@ Activate CPU mode.
 Run the stochastic gradient descent method on the objective. If a testset is provided, generalization performance will also periodically be evaluated.
 
 *source:*
-[Strada/src/sgd.jl:22](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/sgd.jl#L22)
+[Strada/src/sgd.jl:22](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/sgd.jl#L22)
 
 ---
 
@@ -459,7 +459,7 @@ Run the stochastic gradient descent method on the objective. If a testset is pro
 Fill a binary blob with zeros.
 
 *source:*
-[Strada/src/blobs.jl:170](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/blobs.jl#L170)
+[Strada/src/blobs.jl:170](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/blobs.jl#L170)
 
 ---
 
@@ -468,7 +468,7 @@ Fill a binary blob with zeros.
 Fill a binary blob with zeros.
 
 *source:*
-[Strada/src/blobs.jl:54](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/blobs.jl#L54)
+[Strada/src/blobs.jl:54](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/blobs.jl#L54)
 
 ---
 
@@ -478,7 +478,7 @@ A data stream represents a data source for a neural network. It could be data he
 
 
 *source:*
-[Strada/src/stream.jl:9](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/stream.jl#L9)
+[Strada/src/stream.jl:9](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/stream.jl#L9)
 
 ---
 
@@ -488,7 +488,7 @@ Data to be fed into a CaffeNet is kept in a `Data{F,N}` structure where `F` is t
 
 
 *source:*
-[Strada/src/stream.jl:4](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/stream.jl#L4)
+[Strada/src/stream.jl:4](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/stream.jl#L4)
 
 ## Internal
 
@@ -499,7 +499,7 @@ Data to be fed into a CaffeNet is kept in a `Data{F,N}` structure where `F` is t
 Calculate the full gradient of the model at parameters `theta` over the dataset `data`. The gradient will be stored in `grad`.
 
 *source:*
-[Strada/src/utils.jl:43](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/utils.jl#L43)
+[Strada/src/utils.jl:43](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/utils.jl#L43)
 
 ---
 
@@ -508,7 +508,7 @@ Calculate the full gradient of the model at parameters `theta` over the dataset 
 Calculate prediction performance of the model with parameters `theta` over a whole dataset `data`
 
 *source:*
-[Strada/src/utils.jl:57](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/utils.jl#L57)
+[Strada/src/utils.jl:57](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/utils.jl#L57)
 
 ---
 
@@ -517,7 +517,7 @@ Calculate prediction performance of the model with parameters `theta` over a who
 Number of datapoints in the MinibatchStream
 
 *source:*
-[Strada/src/stream.jl:65](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/stream.jl#L65)
+[Strada/src/stream.jl:65](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/stream.jl#L65)
 
 ---
 
@@ -527,7 +527,7 @@ An ApolloDict is a collection of blobs with names, each name is associated with
 one floating point array. Example: The name 'ip_weights' could map to the weights of a linear layer.
 
 *source:*
-[Strada/src/blobs.jl:71](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/blobs.jl#L71)
+[Strada/src/blobs.jl:71](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/blobs.jl#L71)
 
 ---
 
@@ -538,7 +538,7 @@ an arbitrary number of floating point arrays. Example: The name 'conv1' could
 map to a vector containing the biases and weights of a convolution.
 
 *source:*
-[Strada/src/blobs.jl:7](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/blobs.jl#L7)
+[Strada/src/blobs.jl:7](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/blobs.jl#L7)
 
 ---
 
@@ -548,7 +548,7 @@ An empty stream represents a data source with no data.
 
 
 *source:*
-[Strada/src/stream.jl:14](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/stream.jl#L14)
+[Strada/src/stream.jl:14](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/stream.jl#L14)
 
 ---
 
@@ -558,7 +558,7 @@ A MinibatchStream is a collection of data represented in memory that has been pa
 
 
 *source:*
-[Strada/src/stream.jl:25](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/stream.jl#L25)
+[Strada/src/stream.jl:25](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/stream.jl#L25)
 
 ---
 
@@ -568,5 +568,5 @@ A collection of blobs in a network. Grouped into 'data' (the actual parameters)
 and 'diff' (the gradients) so they can be treated as vectors that can be added together.
 
 *source:*
-[Strada/src/blobs.jl:64](https://github.com/pcmoritz/Strada.jl/tree/3baa11b349530fb35b90c972eabe3f6abff2dc26/src/blobs.jl#L64)
+[Strada/src/blobs.jl:64](https://github.com/pcmoritz/Strada.jl/tree/e5894dea6e68013b0cea9a57fd518cad4fdc05b4/src/blobs.jl#L64)
 

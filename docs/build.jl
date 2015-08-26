@@ -9,7 +9,22 @@ writeobj(m::Method) = first(split(string(m), "("))
 
 function url(m)
     line, file = m
-    return Base.fileurl(file)
+    try
+        d = dirname(file)
+        u = Pkg.Git.readchomp(`config remote.origin.url`, dir=d)
+        u = match(Pkg.Git.GITHUB_REGEX,u).captures[1]
+        root = cd(d) do # dir=d confuses --show-toplevel, apparently
+            Pkg.Git.readchomp(`rev-parse --show-toplevel`)
+        end
+        if beginswith(file, root)
+            commit = Pkg.Git.readchomp(`rev-parse HEAD`, dir=d)
+            return "https://github.com/$u/tree/$commit/"*file[length(root)+2:end]*"#L$line"
+        else
+            return Base.fileurl(file)
+        end
+    catch
+        return Base.fileurl(file)
+    end
 end
 
 function mysave(file::String, m::Module, order = [])
