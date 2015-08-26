@@ -34,7 +34,7 @@ type MinibatchStream <: DataStream
 		end
 		n = size(input[1], ndims(input[1]))
 		@assert mod(n, batchsize) == 0 || drop
-		data = Data[]
+		data = typeof(input)[]
 		for i = 1:div(n, batchsize)
 			therange = ((i-1) * batchsize + 1) : i * batchsize
 			push!(data, tuple([getfull(input[j], therange) for j in 1:length(input)]...))

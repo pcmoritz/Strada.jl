@@ -90,6 +90,10 @@ list(REMOVE_ITEM SourceUtil "${CMAKE_CURRENT_SOURCE_DIR}/caffe/src/caffe/util/hd
 list(REMOVE_ITEM SourceUtil "${CMAKE_CURRENT_SOURCE_DIR}/caffe/src/caffe/util/db_lmdb.cpp")
 list(REMOVE_ITEM SourceUtil "${CMAKE_CURRENT_SOURCE_DIR}/caffe/src/caffe/util/db_leveldb.cpp")
 
+# force generation of proto header
+add_library(proto STATIC ${CMAKE_CURRENT_SOURCE_DIR}/caffe/include/caffe/proto/caffe.pb.h ${ProtoSources})
+set(Caffe_LINKER_LIBS proto ${Caffe_LINKER_LIBS})
+
 if(CUDA_FOUND)
 	cuda_add_library(jlcaffe SHARED ${ProtoSources} ${ProtoHeaders} ${Source} ${SourceLayers} ${SourceGPULayers} ${SourceUtil} ${SourceGPUUtil} jlcaffe/jlcaffe.cpp ${CMAKE_CURRENT_SOURCE_DIR}/caffe/include/caffe/proto/caffe.pb.h)
 
