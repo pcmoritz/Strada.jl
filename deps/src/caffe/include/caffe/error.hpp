@@ -49,13 +49,16 @@ struct ErrorCallback {
 		return thestream;
 	}
 	ErrorCallback(void (*callback)(const char *msg)) {}
+	ErrorCallback(void (*callback)(const char *msg), const char* file, int line) { 
+		thestream << file << ":" << line << ", "; 
+	}
 	ErrorCallback(void (*callback)(const char *msg), const char* file, int line, const google::CheckOpString& result) { 
 		thestream << file << ":" << line << " [" << *(result.str_) << "] "; 
 	}
 	~ErrorCallback() { global_caffe_error_callback(thestream.stream.str().c_str()); }
 };
 
-#define COMPACT_GOOGLE_LOG_FATAL ErrorCallback(global_caffe_error_callback)
+#define COMPACT_GOOGLE_LOG_FATAL ErrorCallback(global_caffe_error_callback, __FILE__, __LINE__)
 
 #define GET_LOG(FILE, LINE, RESULT) ErrorCallback(global_caffe_error_callback, FILE, LINE, RESULT)
 

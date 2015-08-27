@@ -3,6 +3,8 @@ using JSON
 using Logging
 using Distributions
 
+# Task and hyperparameters from the original Apollo repo
+
 batchsize = 32
 vocab_size = 256
 zero_symbol = vocab_size - 1
