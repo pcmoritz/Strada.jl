@@ -30,6 +30,7 @@ provides(Homebrew.HB,
     }, os = :Darwin)
 end : nothing
 
+@unix ? begin
 provides(SimpleBuild,
     (@build_steps begin
         CreateDirectory(builddir)
@@ -49,6 +50,7 @@ provides(SimpleBuild,
             end)
         end
     end), libjlcaffe, os=:Unix, installed_libpath=joinpath(prefix, "lib"))
+end : nothing
 
 provides(SimpleBuild,
     (@build_steps begin
