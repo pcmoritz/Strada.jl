@@ -26,7 +26,7 @@ provides(AptGet,{
 @osx ? begin
 provides(Homebrew.HB,
     {"glog" => glog,
-    "protobuf241" => protobuf
+    "protobuf" => protobuf
     }, os = :Darwin)
 end : nothing
 
