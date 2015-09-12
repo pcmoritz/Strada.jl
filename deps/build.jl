@@ -25,9 +25,9 @@ provides(AptGet,{
 
 @osx ? begin
 provides(Homebrew.HB,
-    "glog", glog,
-    "protobuf241", protobuf,
-    os = :Darwin)
+    {"glog" => glog,
+    "protobuf241" => protobuf
+    }, os = :Darwin)
 end : nothing
 
 provides(SimpleBuild,
