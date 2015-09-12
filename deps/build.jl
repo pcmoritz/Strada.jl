@@ -70,6 +70,6 @@ provides(SimpleBuild,
                 `protoc -I=$srcdir/caffe/src/caffe/proto/ --julia_out=$stradasrcdir/ $srcdir/caffe/src/caffe/proto/caffe.proto`
             end)
         end
-    end), libjlcaffe, os=:Darwin, installed_libpath=joinpath(prefix, "lib"))
+    end), libjlcaffe, os=:OSX, installed_libpath=joinpath(prefix, "lib"))
 
 @BinDeps.install @compat Dict(:libjlcaffe => :libjlc)
