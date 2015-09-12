@@ -6,7 +6,7 @@ using Compat
 @BinDeps.setup
 
 glog = library_dependency("libglog")
-probobuf = library_dependency("libprotobuf")
+protobuf = library_dependency("libprotobuf")
 
 libjlcaffe = library_dependency("libjlcaffe")
 
@@ -20,7 +20,7 @@ ENV["PATH"] = ENV["PATH"] * ":" * protobufdir
 
 provides(AptGet,{
         "libgoogle-glog-dev" => glog,
-        "libprotobuf-dev" => probobuf,
+        "libprotobuf-dev" => protobuf,
     })
 
 @osx ? begin
