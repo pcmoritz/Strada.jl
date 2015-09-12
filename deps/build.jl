@@ -30,7 +30,7 @@ provides(Homebrew.HB,
     }, os = :Darwin)
 end : nothing
 
-@unix ? begin
+@linux ? begin
 provides(SimpleBuild,
     (@build_steps begin
         CreateDirectory(builddir)
