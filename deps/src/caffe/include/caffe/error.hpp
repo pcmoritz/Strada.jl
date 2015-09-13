@@ -19,23 +19,7 @@ extern "C" {
 
 struct ErrorStream : public std::ostream {
 	std::ostringstream stream;
-	template<size_t n>
-	ErrorStream& operator<<(const char (&message)[n]) {
-		stream << message;
-		return *this;
-	}
-	virtual ErrorStream& operator<<(const char *message) {
-		stream << message;
-		return *this;
-	}
-	virtual ErrorStream& operator<<(const std::string& message) {
-		stream << message;
-		return *this;
-	}
-	virtual ErrorStream& operator<<(size_t message) {
-		stream << message;
-		return *this;
-	}
+
 	virtual ErrorStream& operator<<(std::ostream&(*f)(std::ostream&))
 	{
 		stream << std::endl;
