@@ -82,7 +82,7 @@ include("utils.jl")
 include("sgd.jl")
 
 libpath = joinpath(Pkg.dir("Strada"), "deps", "usr", "lib")
-@linux? Libdl.dlopen(joinpath(libpath, "libjlcaffe.so")) : Libdl.dlopen(joinpath(libpath, "libjlcaffe.so.dylib"))
+@linux? Libdl.dlopen(joinpath(libpath, "libjlcaffe.so")) : dlopen(joinpath(libpath, "libjlcaffe.so.dylib"))
 
 # load blas and export symbols
 Libdl.dlopen(Base.libblas_name, Libdl.RTLD_LAZY | Libdl.RTLD_DEEPBIND | Libdl.RTLD_GLOBAL)
