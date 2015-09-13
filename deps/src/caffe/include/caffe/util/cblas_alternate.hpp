@@ -6,6 +6,8 @@
 
 #if BLASSUFFIX
 
+#define blasint CBLAS_INDEX
+
 double BLAS(cblas_dasum)(const int N, const double *X, const int incX);
 
 void BLAS(cblas_daxpy)(const int N, const double alpha, const double *X,
