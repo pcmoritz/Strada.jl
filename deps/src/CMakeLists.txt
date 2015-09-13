@@ -55,6 +55,12 @@ endif(USE_64_BIT_BLAS)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/caffe/include/)
 include_directories(${PROJECT_BINARY_DIR}/caffe/include/)
 
+# switch of symbol undefined warning for BLAS on Mac OS
+
+if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+  set(CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS "${CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS} -undefined dynamic_lookup")
+endif()
+
 # for gtest
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/caffe/src/)
 
