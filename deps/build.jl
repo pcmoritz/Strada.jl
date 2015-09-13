@@ -66,7 +66,7 @@ provides(SimpleBuild,
                     `cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$prefix" $srcdir`
                 end
                 `make -j`
-                `cp libjlcaffe.dylib $prefix/lib/libjlcaffe.so`
+                `cp libjlcaffe.dylib $prefix/lib/libjlcaffe.so.dylib`
                 `protoc -I=$srcdir/caffe/src/caffe/proto/ --julia_out=$stradasrcdir/ $srcdir/caffe/src/caffe/proto/caffe.proto`
             end)
         end
